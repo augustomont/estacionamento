@@ -1,7 +1,12 @@
+using estacionamento.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<Contexto>(options => options.UseSqlServer("server=DESKTOP-O6V28ED\\SQLEXPRESS; database=Estoque; Trusted_connection=true; TrustServerCertificate=true"));
 
 var app = builder.Build();
 
